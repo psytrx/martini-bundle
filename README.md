@@ -2,6 +2,10 @@
 
 `martini-bundle` adds asset optimization to **[Martini](https://github.com/codegangsta/martini)**.
 
+## Build State
+
+[![wercker status](https://app.wercker.com/status/1acc2e1acb54bd7cbef8ecf0c4193c1e "wercker status")](https://app.wercker.com/project/bykey/1acc2e1acb54bd7cbef8ecf0c4193c1e)
+
 ## Getting Started
 
 Install all the packages (go 1.1 and greater is required):
