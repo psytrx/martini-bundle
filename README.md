@@ -10,8 +10,10 @@ Install all the packages (go 1.1 and greater is required):
   
 and
 
-    import "github.com/fjdumont/martini-bundle/scriptbundle"
-    import "github.com/fjdumont/martini-bundle/stylebundle"
+~~~ go
+import "github.com/fjdumont/martini-bundle/scriptbundle"
+import "github.com/fjdumont/martini-bundle/stylebundle"
+~~~
 
 ## Components
 
@@ -25,19 +27,23 @@ and
 
 Simply use `scriptbundle.Default(files ...string)` as a `martini.Handler` to register your script files as a bundle:
 
-    m := martini.Classic()
-    m.Get("/js/app.js", scriptbundle.Default(
-      "public/js/jquery.js",
-      "public/js/app-utils.js",
-      "public/js/app.js",
-    ))
+~~~ go
+m := martini.Classic()
+m.Get("/js/app.js", scriptbundle.Default(
+  "public/js/jquery.js",
+  "public/js/app-utils.js",
+  "public/js/app.js",
+))
+~~~
 
 Alternatively, plug your own `scriptbundle.Options` into `scriptbundle.Bundle(opts *scriptbundle.Options, files ...string)` to customize your optimizations:
 
-    type Options struct {
-      Wrap   bool
-      Minify bool
-    }
+~~~ go
+type Options struct {
+  Wrap   bool
+  Minify bool
+}
+~~~
 
 ### stylebundle
 
@@ -48,15 +54,19 @@ Alternatively, plug your own `scriptbundle.Options` into `scriptbundle.Bundle(op
 
 Use `stylebundle.Default(files ...string)` as a `martini.Handler` to compile your styles into a bundle and use them:
 
-    m := martini.Classic()
-    m.Get("/css/app.css", stylebundle.Default(
-      "public/js/vendor/bootstrap.css",
-      "public/js/vendor/bootstrap-responsive.css",
-      "public/js/app.css",
-    ))
+~~~ go
+m := martini.Classic()
+m.Get("/css/app.css", stylebundle.Default(
+  "public/js/vendor/bootstrap.css",
+  "public/js/vendor/bootstrap-responsive.css",
+  "public/js/app.css",
+))
+~~~
 
 Alternatively, plug your own `stylebundle.Options` into `stylebundle.Bundle(opts *stylebundle.Options, files ...string)` to customize your optimizations:
 
-    type Options struct {
-      Minify bool
-    }
+~~~ go
+type Options struct {
+  Minify bool
+}
+~~~
