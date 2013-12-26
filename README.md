@@ -1,6 +1,6 @@
 # martini-bundle
 
-`martini-bundle` adds asset optimization to **[Martini](https://github.com/codegangsta/martini)**.
+`martini-bundle` adds resource bundling and minification to **[Martini](https://github.com/codegangsta/martini)**.
 
 ## Build State
 
